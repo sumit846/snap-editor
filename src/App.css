@@ -1,0 +1,152 @@
+*, *::before,*::after{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: 
+  "image sidebar"
+  "slider sidebar";
+  height: 100vh;
+  width: 100vw;
+  background-color:  #dadada;
+}
+
+.main-image {
+  
+ position: relative;
+  grid-area: image;
+/* background-image: url("https://source.unsplash.com/EwKXn5CapA4"); */
+/* width: 100%;
+height: 100%; */
+/* background-position: top center;
+background-size: contain;
+background-repeat: no-repeat; */
+}
+
+
+ #imgE{
+  position: absolute;
+  max-width: 80%;
+  max-height: 90%;
+  
+  top: 35px;
+  display: inline-flex;
+  bottom: auto;
+  /* left: auto !important */
+  margin-left: 34% ;
+  /* margin-right: 100% ; */
+}
+
+#imgE > img{
+  position: absolute;
+  max-height: 450px;
+  width: auto;
+}
+
+
+
+.sidebar{
+  grid-area: sidebar;
+  background-color: #F0F0F0;
+  border-left: 1px solid #3C486B;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.sidebar-item{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #F0F0F0;
+  padding: 1rem;
+  position: relative;
+  transition: background-color 150ms;
+}
+
+.sidebar-item:hover , .sidebar-item:focus{
+  background-color: #F9D949;
+}
+
+.sidebar-item.active{
+  background-color: #F45050;
+}
+
+.sidebar-item::after{
+  content: '';
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  bottom: 0;
+  height: 1px;
+  background-color: #242842;
+}
+
+.sidebar-item:last-child::after{
+  display: none;
+}
+
+.slider-container{
+  grid-area: slider;
+  background-color: #3C486B;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+ .slider-container > p{
+text-align: center;
+color: white;
+}
+
+
+.slider{
+  width: 100%;
+  cursor: pointer;
+}
+
+
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  padding: 22px 0px;
+}
+
+
+
+
+#dropDown{
+ 
+  margin: auto;
+
+  max-width: 100%;
+  padding: 25px;
+  border: 3px dashed black;
+  border-radius: 3px;
+  transition: 0.2s;
+  &.is-active {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+#root > div > div.main-image > button{
+  position: absolute;
+  left:45%;
+  top:100%;
+}
